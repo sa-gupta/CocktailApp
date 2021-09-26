@@ -1,0 +1,54 @@
+<!-- <div class="card"
+    cds-layout="grid cols@sm:6 cols@md:auto align:horizontal">
+
+    <div class="card-media-block">
+        <img cds-layout="m:sm" width="50%" [src] = "cocktail.imgUrl" />
+    </div>
+
+    <section>
+        <div class="card-header">
+            <h3>{{cocktail.name}}</h3>
+        </div>
+
+        <div class="card-block">
+            <h4>Category</h4>
+            <p>{{ cocktail.category }}, {{ cocktail.alcoholic }}</p>
+
+            <h4>Ingredients</h4>
+            <p>{{ cocktail.ingredients  }}</p>
+
+            <h4>Instructions</h4>
+            <p>{{ cocktail.instruction }}</p>
+        </div>
+    </section>
+
+</div> -->
+
+<div class="clr-row">
+    <div class="clr-col-lg-12 clr-col-12">
+        <div class="card" *ngFor="let cocktail of cocktails;">
+            <div class="card-header">
+                <h3>{{cocktail.name}}</h3>
+            </div>
+            <div class="card-block">
+                <div class="card-media-block">
+                    <img cds-layout="m:sm"  style="width: 400px; height: 400px;" [src] = "cocktail.imgUrl" />
+
+                    <div class="card-media-description">
+                        <span class="card-media-title">
+                            <h4>Category</h4>
+                            <p>{{ cocktail.category }}, {{ cocktail.alcoholic }}</p>
+
+                            <h4>Ingredients</h4>
+                            <p>{{ cocktail.ingredients  }}</p>
+
+                            <h4>Instructions</h4>
+                            <p>{{ cocktail.instruction }}</p>
+                        </span>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>
+<!-- {{ cocktail | json }} -->

@@ -1,0 +1,32 @@
+<div class="content-container">
+    <div class="content-area" >
+        <a *ngFor="let l of alphabets" (click)="listRoute(l)" 
+            style="font-size: medium; font-weight: 800;padding-left: 17px;padding-right: 17px; text-decoration: none; cursor: pointer;">
+            {{l | uppercase}}
+        </a>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <th>#</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Alcoholic</th>
+        <th>Glass</th>
+        <th>Ingredient</th>
+        <th>Details</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of cocktails; index as i">
+            <td>{{i + 1}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.category}}</td>
+            <td>{{c.alcoholic}}</td>
+            <td>{{c.glass}}</td>
+            <td>{{c.ingredients.join(', ')}}</td>
+            <td><a [routerLink]="['/cocktail-details',c.id]">See more</a></td>
+        </tr>
+    </tbody>
+</table>
+
